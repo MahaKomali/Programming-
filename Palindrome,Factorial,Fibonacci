@@ -1,0 +1,81 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class ALLIN{
+   public int fact(int num) {
+    if (num == 0 || num == 1) {
+        return 1;
+    } else {
+        return num * fact(num - 1);
+    }
+}
+
+   public void printFibSeries(int num) {
+    for (int i = 0; i <= num; i++) {
+        System.out.print(fib(i) + " ");
+    }
+    System.out.println(); }
+
+public int fib(int num) {
+    if (num == 0) {
+        return 0;
+    } else if (num == 1) {
+        return 1;
+    } else {
+        return fib(num - 1) + fib(num - 2);
+    }
+}
+
+
+    public void palindrome(int num)
+    {
+        
+       int  original=num;
+        int sum=0;
+
+        while(num>0){
+        int q=num%10;
+        sum=(sum*10)+q;
+        num=num/10;
+            
+        }
+        if(original==sum)
+        {
+            System.out.println("Yes!its a palindorme");
+        }
+        else{
+            System.out.println("No!its not a palindrome");
+        }
+      
+    }
+    
+ 
+    public static void main(String[] args) 
+    {
+        System.out.println("Enter the input");
+        Scanner sc=new Scanner(System.in);
+           
+       ALLIN s=new ALLIN();
+         
+        int num=sc.nextInt();
+        System.out.println("Enter the choice{Palindrome,Factorial,Fibonacci}");
+        String w=sc.next();
+        switch(w){
+        case "palindrome":
+            s.palindrome(num);
+            break;
+        case "fibonacci":
+            System.out.println(s.fib(num));
+            s.printFibSeries(num);
+             break;
+        case "factorial":
+            System.out.println(s.fact(num));
+             break;
+        }
+            
+     
+    
+        
+       
+    }
+}

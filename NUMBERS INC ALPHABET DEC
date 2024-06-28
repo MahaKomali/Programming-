@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+        printPattern(10);
+    }
+
+    public static void printPattern(int rows) {
+        for (int i = 1; i <= rows; i++) {
+            // Numbers part
+         
+            for(int j=1;j<=rows-i;j++)
+            {
+                System.out.print(" ");
+            }
+            StringBuilder numbers = new StringBuilder();
+            for (int j = 1; j <= i + 1; j++) {
+                numbers.append(j);
+            }
+
+            // Alphabets part
+            StringBuilder alphabets = new StringBuilder();
+            for (int j = rows - i + 1; j <= rows; j++) {
+                alphabets.append((char) ('A' + rows - j));
+            }
+         
+
+            // Combine and print
+            System.out.println(numbers.toString() + alphabets.toString());
+        }
+    }
+}

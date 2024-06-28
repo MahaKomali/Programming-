@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        try {
+            int number = scanner.nextInt();
+            String binaryRepresentation = Integer.toBinaryString(number);
+            System.out.println("The binary representation of " + number + " is: " + binaryRepresentation);
+        } catch (Exception e) {
+            System.out.println("Please enter a valid integer.");
+        } finally {
+            scanner.close();
+        }
+    }
+}

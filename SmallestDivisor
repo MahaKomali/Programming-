@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class SmallestExactDivisor {
+    public static int smallestDivisor(int n) {
+        for (int i = 2; i <= n; i++) {
+            if (n % i == 0) {
+                return i;
+            }
+        }
+        return n; // If no divisor found (this would only happen if n is 1)
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+      
+            int number = scanner.nextInt();
+            if (number <= 1) {
+                System.out.println("Please enter an integer greater than one.");
+            } else {
+                int smallest = smallestDivisor(number);
+                System.out.println("The smallest exact divisor of " + number + " greater than one is: " + smallest);
+            }
+        
+        
+    }
+}

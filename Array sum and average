@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Jello {
+    public static void main(String[] args) {
+       
+
+        int sum = 0;
+        double avg=0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter integers:");
+        int size=sc.nextInt();
+         int[] arr = new int[size];
+        
+
+        for (int i = 0; i < arr.length; i++) {
+            int d = sc.nextInt();
+            arr[i] = d;
+            sum += d;
+        }
+        avg=(double)sum/arr.length;
+
+        System.out.println("The average is: " + avg);
+    }
+}

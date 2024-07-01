@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class MatrixPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        
+        // Create a 2D array to store the matrix
+        int[][] matrix = new int[2 * N - 1][2 * N - 1];
+        
+        // Fill the matrix with appropriate values
+        for (int i = 0; i < 2 * N - 1; i++) {
+            for (int j = 0; j < 2 * N - 1; j++) {
+                // Calculate the value based on the position
+                matrix[i][j] = N - Math.min(Math.min(i, 2 * N - 2 - i), Math.min(j, 2 * N - 2 - j));
+            }
+        }
+        
+        // Print the matrix
+        for (int i = 0; i < 2 * N - 1; i++) {
+            for (int j = 0; j < 2 * N - 1; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        scanner.close();
+    }
+}
